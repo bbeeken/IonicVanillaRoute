@@ -1,0 +1,2 @@
+# IonicVanillaRoute
+Created with CodeSandbox
