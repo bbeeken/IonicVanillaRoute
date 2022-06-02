@@ -1,19 +1,22 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>App Dashboard</ion-title>
+    <ion-title>
+      Ionic Datatable Example
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col text-center>
-        Welcome User!
-
-        <p>User email : <strong>{{ userDetail }}</strong></p>
-      </ion-col>
-    </ion-row>
-
-    <ion-button type="submit" color="danger" expand="block" (click)="signOut()">Signout</ion-button>
-  </ion-grid>
+<ion-content [fullscreen]="true">
+  <input type="text"  placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" />
+    <ngx-datatable
+      class="material"
+      [limit]="7"
+      [rows]="rows"
+      [rowHeight]="60"
+      [columns]="col"
+      [columnMode]="'force'"
+      [sortType]="'multi'"
+      [headerHeight]="60"
+      [footerHeight]="60">
+  </ngx-datatable>
 </ion-content>
